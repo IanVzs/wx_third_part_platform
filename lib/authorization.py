@@ -228,7 +228,7 @@ def refresh_token():
 
 def do_refresh_info(info_dict_data: dict, old_info: dict = {}) -> dict:
     """
-    刷新appid_map表信息(《左手医生开放平台》&&《微信开放平台》的appid映射，以及各个appid为第三方平台的授权信息 )
+    刷新appid_map表信息(《左开台》&&《微信开放平台》的appid映射，以及各个appid为第三方平台的授权信息 )
     
     顺便刷新授权方的账号基本信息(有更改则刷新，无则跳过)
     头像、昵称、账号类型、认证类型、微信号、原始ID和二维码ＵＲＬ

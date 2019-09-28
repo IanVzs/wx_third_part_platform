@@ -132,7 +132,7 @@ def update(wechat_appid: str, nick_name: str, auth_info: dict) -> dict:
 
 def get_auth_info(app_id: str, pre_auth_code: str = '') -> dict:
     """
-    para: app_id ::左手开放appid
+    para: app_id ::左开appid
     para: pre_auth_code ::预授权码
     find by app_id or pre_auth_code
     """
@@ -168,8 +168,8 @@ def get_app_id_by_wechat_id(wechat_appid):
     rlt = op.get_app_id_by_wechat_id(wechat_appid)
     app_id = ''
     for i in rlt:
-        if i["appid"] and isinstance(i["appid"], str) and len(i["appid"]) == 24:
-            # 该长度为左医开放平台生成的appid的长度
+        if i["appid"] and isinstance(i["appid"], str) and len(i["appid"]) == 12:
+            # 该长度为appid的长度
             app_id = i["appid"]
             break
     return app_id

@@ -91,15 +91,15 @@ class WechatOffAccPlatformMonitor:
         monitor_data = {}
         if event_name == "authorized":
             # 授权
-            data["event_name"] = f'{data.get("AuthorizerAppid")}授权予《左手医生微信第三方平台》.'
+            data["event_name"] = f'{data.get("AuthorizerAppid")}授权予《大陆魔法学校》.'
             app_id = dao_wxapi.read_data(data.get("PreAuthCode") or '') or ''
         elif event_name == "unauthorized":
             # 取消授权
-            data["event_name"] = f'{data.get("AuthorizerAppid")}取消对于《左手医生微信第三方平台》的授权.'
+            data["event_name"] = f'{data.get("AuthorizerAppid")}取消对于《大陆魔法学校》的授权.'
             nick_name = dao_wxservice.get_nick_name_by_wechat_id(data.get("AuthorizerAppid") or '')
         elif event_name == "updateauthorized":
             # 更新授权
-            data["event_name"] = f'{data.get("AuthorizerAppid")}更新对于《左手医生微信第三方平台》的授权内容.'
+            data["event_name"] = f'{data.get("AuthorizerAppid")}更新对于《大陆魔法学校》的授权内容.'
             app_id = dao_wxservice.get_app_id_by_wechat_id(data.get("AuthorizerAppid") or '')
         else:
             # 异常操作？

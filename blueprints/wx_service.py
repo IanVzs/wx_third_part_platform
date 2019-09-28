@@ -240,7 +240,7 @@ def do_get_auth_url(inputs: dict, test: bool = False) -> (list, dict):
 #@profiler.profileit
 def get_auth_url():
     """
-    :para  app_id ::type str ::desc 左医appid
+    :para  app_id ::type str ::desc 唉,医者自医appid
     """
     log_info('', request)
     wrapped = None
@@ -281,8 +281,8 @@ def do_get_auth_info(inputs: dict, test: bool = False) -> (dict, list):
                 base_info["verify_type_info"] = all_info["authorizer_info"]["verify_type_info"][authorizer_info[
                     "verify_type_info"]["id"]]  # 认证
 
-                if "康夫子" in base_info["principal_name"]:
-                    base_info["principal_name"] = "左手医生"
+                if "牛肉大王" in base_info["principal_name"]:
+                    base_info["principal_name"] = "牛肉丸子"
             if authorization_info:
                 # power_list
                 base_info["wechat_appid"] = authorization_info.get("authorizer_appid") or ''
@@ -362,7 +362,7 @@ def do_get_auth_info(inputs: dict, test: bool = False) -> (dict, list):
 #@profiler.profileit
 def get_auth_info():
     """
-    :para app_id ::type str ::desc 左医appid
+    :para app_id ::type str ::desc 唉,医者自医appid
     """
     log_info('', request)
     wrapped = None
@@ -430,7 +430,7 @@ def do_exchange(inputs: dict, test: bool = False) -> (list, dict):
 #@profiler.profileit
 def exchange():
     """
-    :para app_id ::type str ::desc 左医appid
+    :para app_id ::type str ::desc 唉,医者自医appid
     """
     log_info('', request)
     wrapped = None
@@ -457,7 +457,7 @@ def exchange():
 #@profiler.profileit
 def refresh_info():
     """
-    :para app_id ::type str ::desc 左医appid
+    :para app_id ::type str ::desc 唉,医者自医appid
     """
     log_info('', request)
     wrapped = None
