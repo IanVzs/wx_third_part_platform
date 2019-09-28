@@ -1,5 +1,15 @@
-# Object file
+*.pyc
+__pycache__
+nohup.out
+log
+config.py
+output
+build
+*.c
 *.o
-
-# Ada Library Information
-*.ali
+log.ini
+api.log
+*.log
+api.ini
+release
+.vscode

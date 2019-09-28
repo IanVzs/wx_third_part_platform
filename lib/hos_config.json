@@ -1,0 +1,232 @@
+{
+    "waa111asdw43f3b5": {
+        "nickname": "这样才好",
+        "thumb_media_hello": "Qtz6eIuA6ES2fe2wsdfbp10vsI_u2J8",
+        "mini_card_title": "这样才好就诊用药指导",
+        "subscribe_txt": "",
+        "subscribe_news": "关注事件回复图文, 内容{NEWS_DATA}",
+        "menu_info": {
+            "position": [1, 0],
+            "name": "用药指导",
+            "button": {
+                "key": "Get_This_Guy", 
+                "name": "用药指导", 
+                "sub_button": [], 
+                "type": "click"
+            }
+        },
+        "Get_This_Guy": {
+            "pagepath": "/pages/asdkj/base_info/index?app_hello=5c99b1a09ea2ea68c824dad8&hos_name={hos_name}&open_id={open_id}&stat_source=tmcm",
+            "template_hello": "20NLai49_QTA8fwevfwef2WiRvZb"
+            "first": "获取用药指导报告",
+            "keyword2": "这样才好，处方用药指导报告",
+            "remark": "请遵循用药指导，科学用药，祝您早日康复！"
+        },
+        "Medical_Matter": {
+            "pagepath": "/pages/dislike_manage/add_doctor/index?q={q}",
+            "template_hello": "AYuBhWnINMt-wTejPcYFno3HTGReUO90ZMWYEcn7hi8",
+            "first": "您好，针对您病情的叮嘱",
+            "keyword1": "{doctor_info}",
+            "keyword2": "{patient_name}",
+            "keyword3": "点击查看医生为您添加的病情管理计划 >",
+            "keyword4": "{date_time}",
+            "remark": ""
+        },
+        "NEWS_DATA" : [
+            {
+                "Title": "她们的题目不会做总组织部落",
+                "Description": "",
+                "PicUrl": "http://mmbiz.qpic.cn/mmbiz_jpg/YFhgtzRnDryjQHnTkmfHKO1J4OnaLv7sl0gNI8zx2DiaIpDZE6JoSjCRx6sialfsAt5oskAOE6rvskmYzP1er64A/0?wx_fmt=jpeg",
+                "Url": "https://mp.weixin.qq.com/s?__biz=MzUzMDg0NTA2Mg==&mhello=100000005&idx=1&sn=c008e1b04b2a188befdea42a26f67156&chksm=7a4addec4d3d54fa32c0b52b32b92be68fdf99c52ba50c8851a6833bc13f3d5ef78fa58a2d69#rd"
+            },
+            {
+                "Title": "「用药指导」上线啦！10秒读懂怎么用",
+                "Description": "",
+                "PicUrl": "http://mmbiz.qpic.cn/mmbiz_jpg/YFhgtzRnDrwlMKBRZYpMRcFiaqgdiacsjey4JAE0hnFvicxI8dqHN1H1zNRh9QicaSMoTqXt3oian26GQyxNEB85Ssg/0?wx_fmt=jpeg",
+                "Url": "http://mp.weixin.qq.com/s?__biz=MzUzMDg0NTA2Mg==&mhello=100000005&idx=2&sn=5cff637fae47cdb26985b0eb0b60e48c&chksm=7a4addec4d3d54faebfaae51e0c6e9507132c038dcf35443ecefaace77e46fa6d8ecda662ace#rd"
+            }
+        ]
+    },
+    "wx89521qasdadqw": {
+        "nickname": "她们的题目不会做总组织部落",
+        "subscribe_txt": "欢迎关注同煤集团总组织部落。点击\"预约就诊\"可在线挂号。点击\"用药指导\"可查看历次完整用药指导。正确安全用药，健康幸福生活。",
+        "subscribe_news": "1",
+        "save_user_info": 1,
+        "menu_info": [
+            {
+                "position": [2, 0],
+                "name": "用药指导",
+                "button": {
+                    "key": "Get_This_Guy",
+                    "name": "用药指导",
+                    "sub_button": [],
+                    "type": "click"
+                }
+            },
+            {
+                "position": [1, 2],
+                "name": "智能预问诊",
+                "button": {
+                    "name": "智能预问诊",
+                    "type": "view",
+                    "url": "http://tongmei.zuasdhakqcheg.com:3000/index/service"
+                }
+            },
+            {
+                "position": [1, 3],
+                "name": "智能导诊",
+                "button": {
+                    "name": "智能导诊",
+                    "type": "view",
+                    "url": "http://tongmei.zuasdhakqcheg.com:3000/"
+                }
+            }
+        ],
+        "Get_This_Guy": {
+            "pagepath": "/pages/asdkj/base_info/index?app_hello=5cddqd352215&hos_name={hos_name}&open_id={open_id}&stat_source=tmcm&referrer_doctor={referrer}",
+            "template_hello": "OxZYTHqvn23rfe2f2flE2TovQGgohUPgWdI",
+            "first": "获取用药指导报告",
+            "keyword2": "她们的题目不会做总组织部落，处方用药指导报告",
+            "remark": "请遵循用药指导，科学用药，祝您早日康复！"
+        }
+    },
+    "wx135021dewcad05d": {
+        "nickname": "文化保护组织部落",
+        "menu_info": {
+            "position": [3, 2],
+            "name": "扫码指导用药",
+            "button": {
+                "apphello": "wxacd37ff25cd2ed6a",
+                "name": "扫码指导用药",
+                "pagepath": "/pages/loginRequiredWebview/index?action=GET_PRESC_REPORT_BY_FPID&app_hello=5d21e7dw", 
+                "sub_button": [], 
+                "type": "miniprogram", 
+                "url": "https://www.zuasdhakqcheg.com/"
+              }
+        },
+        "subscribe_news": "1",
+        "thumb_media_hello": "E447A0J974ZwYpSt34g4bt5h23Dx2PjiFdh4E",
+        "mini_card_title": "文化保护组织部落就诊用药指导"
+    },
+    "wx12e2asf21cfsda": {
+        "nickname": "重庆火锅冷吃兔组织部落",
+        "menu_info": {
+            "position": [2, 5],
+            "name": "用药管家",
+            "button": {
+                "key": "Get_This_Guy", 
+                "name": "用药管家",
+                "sub_button": [], 
+                "type": "click"
+          }
+        },
+        "Get_This_Guy": {
+            "pagepath": "/pages/asdkj/aasd_name_base_info/index?app_hello=5cdqw12b6dwqb&hos_name={hos_name}&open_id={open_id}&stat_source=tmcm",
+            "template_hello": "OcS6llkUXdd23rf34sAX6Lb9GdtiQT_w",
+            "first": "获取用药指导报告",
+            "keyword2": "重庆火锅冷吃兔组织部落，处方用药指导报告",
+            "remark": "请遵循用药指导，科学用药，祝您早日康复！"
+        }
+    },
+    "wx2ad47e142abe2ededs": {
+        "nickname": "海北玄武大殿",
+        "menu_info": {
+            "position": [2, 1],
+            "name": "用药管家",
+            "button": {
+                "key": "Get_This_Guy",
+                "name": "用药管家",
+                "sub_button": [],
+                "type": "click"
+          }
+        },
+        "Get_This_Guy": {
+            "pagepath": "/pages/asdkj/hos_report_list/index?app_hello=5d25c1qwd60c4845d88c7094&hos_name={hos_name}&open_id={open_id}&stat_source=tmcm",
+            "template_hello": "cNARw2112fvrevB7Yd21i_LyL9Q6KnR4",
+            "first": "获取用药指导报告",
+            "keyword2": "海北玄武大殿，处方用药指导报告",
+            "remark": "请遵循用药指导，科学用药，祝您早日康复！"
+        }
+    },
+    "asdasdc621c661": {
+        "nickname": "平冈山武松打虎",
+        "menu_info": {
+            "position": [1, 1],
+            "name": "用药管家",
+            "button": {
+                "key": "Get_This_Guy",
+                "name": "用药管家",
+                "sub_button": [],
+                "type": "click"
+            }
+        },
+        "Get_This_Guy": {
+            "pagepath": "/pages/asdkj/aasd_name_base_info/index?app_hello=5d2adq1w2ea7eef24c238&hos_name={hos_name}&open_id={open_id}&stat_source=tmcm",
+            "template_hello": "CBmJc4HdaRGlskV1dsadwqd12ed",
+            "first": "获取用药指导报告",
+            "keyword2": "平冈山武松打虎，处方用药指导报告",
+            "remark": "请遵循用药指导，科学用药，祝您早日康复！"
+        }
+    },
+    "wdf2e34frv438743b": {
+        "nickname": "贵州黄果树瀑布水帘洞",
+        "menu_info": {
+            "position": [1, 1],
+            "name": "我的",
+            "button": {
+                "key": "Get_This_Guy",
+                "name": "我的",
+                "sub_button": [],
+                "type": "click"
+            }
+        },
+        "Get_This_Guy": {
+            "pagepath": "/pages/asdkj/aasd_name_base_info/index?app_hello=5ce7d1asd343fafe4a9&hos_name={hos_name}&open_id={open_id}&stat_source=tmcm",
+            "template_hello": "21kjkCdasdwHRqYq768qldsadasb-Q",
+            "first": "获取用药指导报告",
+            "keyword2": "贵州黄果树瀑布水帘洞，处方用药指导报告",
+            "remark": "请遵循用药指导，科学用药，祝您早日康复！"
+        }
+    },
+    "sa2wddcscsb31469": {
+        "nickname": "九年义务教育组织部落"
+    },
+    "qwdcwvcd1fcb3647": {
+        "nickname": "这样才好医务端",
+        "save_user_info": 1
+    },
+    "wx7ae5c0qwdwcd40a8": {
+        "nickname": "这样健康",
+        "save_user_info": 1,
+        "Medical_Matter": {
+            "pagepath": "/pages/dislike_manage/add_doctor/index?q={q}",
+            "template_hello": "2LHHxwX_cM4v9tOLK3QIEe11VV8-_mdsuRu0TwSqh1M",
+            "first": "您好，针对您病情的叮嘱",
+            "keyword1": "{doctor_info}",
+            "keyword2": "{patient_name}",
+            "keyword3": "点击查看医生为您添加的病情管理计划 >",
+            "keyword4": "{date_time}",
+            "remark": ""
+        }
+    },
+    "2dewecbd47a141ec": {
+        "nickname": "还能再来一次组织部落",
+        "menu_info": {
+            "position": [2, 1],
+            "name": "用药管家",
+            "button": {
+                "key": "Get_This_Guy",
+                "name": "用药管家",
+                "sub_button": [],
+                "type": "click"
+          }
+        },
+        "Get_This_Guy": {
+            "pagepath": "/pages/asdkj/hos_report_list/index?app_hello=5d0375a4b60c4asdwq0d1343&hos_name={hos_name}&open_id={open_id}&stat_source=tmcm",
+            "template_hello": "sadO4gd-pCncB3godwwRPI48EptBtriU",
+            "first": "获取用药指导报告",
+            "keyword2": "还能再来一次组织部落，处方用药指导报告",
+            "remark": "请遵循用药指导，科学用药，祝您早日康复！"
+        }
+    }
+}

@@ -1,0 +1,3 @@
+emmm_HOST = "f233"
+PARSER_TIMEOUT = 1000
+WYS_HOST = "http://phasdm_slb/das_api"
