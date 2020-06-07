@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+#app = FastAPI()
 """
 解决跨域/官方demo姑且放在这儿
 from starlette.middleware.cors import CORSMiddleware

@@ -1,7 +1,7 @@
 """微信公众平台相关请求处理"""
-from app_setting import app
+#from app_setting import app
 
-
+from fastapi import Form
 
 def get_paras():
     """加密数据解析"""
@@ -16,10 +16,10 @@ def get_paras():
     return postdata, msg_signature, timestamp, nonce, auth_code, ex
 
 
-@app.post("/wx_api/msg")
-async def wx_api_msg():
+@app.get("/wx_api/msg")
+async def wx_api_msg(signature: str, timestamp: str, nonce: int, echostr: str):
     print(appid)
     import ipdb; ipdb.set_trace()
     postdata, msg_signature, timestamp, nonce, auth_code, ex = get_paras()
-
+    
     return "hi"
