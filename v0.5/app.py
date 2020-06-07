@@ -18,10 +18,6 @@ app.url_map.strict_slashes = False
 CORS(app)
 
 import config
-profiler.SERVICE_ID = config.APPNAME + "_" + str(config.PORT)
-profiler.STAGE = "prod"
-profiler.COST_THRESHOLD = 1000
-
 
 class RegexConverter(BaseConverter):
     def __init__(self, url_map, *items):
@@ -65,4 +61,5 @@ def favicon():
 
 @app.route("/monitor")
 def hello():
-    return make_response(jsonify(profiler.monitor()))
+    a = {"a": 1}
+    return make_response(jsonify(a))
