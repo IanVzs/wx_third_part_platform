@@ -1,12 +1,11 @@
 from fastapi import FastAPI
 
-from APIRouters.wx_api import rWX_API
-from APIRouters.bg_task import rBGTask_API
+from routers import bg_task, wx_api
 
 def creat_app():
     app = FastAPI()
-    app.include_router(rWX_API)
-    app.include_router(rBGTask_API)
+    app.include_router(wx_api.router)
+    app.include_router(bg_task.router)
     return app
 
 """
