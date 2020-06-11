@@ -12,4 +12,5 @@ api.log
 *.log
 api.ini
 release
-.vscode
+*.vscode
+*.db
