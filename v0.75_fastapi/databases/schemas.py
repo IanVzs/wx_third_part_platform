@@ -2,35 +2,53 @@ from typing import List
 from pydantic import BaseModel
 
 
-class ItemBase(BaseModel):
+class WeatherBase(BaseModel):
     title: str
     description: str = None
+    update_time = int
+    wea = str
+    tem = float
+    tem_day = float
+    tem_night = float
+    win = str
+    win_speed = int
+    win_meter = str
+    air = int
 
 
-class ItemCreate(ItemBase):
+class WeatherCreate(WeatherBase):
     pass
 
 
-class Item(ItemBase):
-    id: int
-    owner_id: int
+class Weather(WeatherBase):
+    id: str
 
     class Config:
         orm_mode = True
 
 
-class UserBase(BaseModel):
-    email: str
+class CityBase(BaseModel):
+    cityEn = str
+    cityEn = str
+    cityZh = str
+    provinceEn = str
+    provinceZh = str
+    countryEn = str
+    countryZh = str
+    leaderEn = str
+    leaderZh = str
+    lat = str
+    lon = str
 
 
-class UserCreate(UserBase):
-    password: str
+class CityCreate(CityBase):
+    pass
 
 
-class User(UserBase):
-    id: int
+class City(CityBase):
+    id: str
     is_active: bool
-    items: List[Item] = []
+    Weathers: List[Weather] = []
 
     class Config:
         orm_mode = True
