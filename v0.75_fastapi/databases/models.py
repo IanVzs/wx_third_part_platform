@@ -5,7 +5,7 @@ from .database import Base
 
 
 class City(Base):
-    __tablename__ = "city"
+    __tablename__ = "citys"
     id = Column(String, primary_key=True, index=True)
     cityEn = Column(String)
     cityEn = Column(String)
@@ -22,9 +22,9 @@ class City(Base):
     weathers = relationship("Weather", back_populates="owner")
 
 class Weather(Base):
-    __tablename__ = "weather"
+    __tablename__ = "weathers"
 
-    id = Column(String, primary_key=True, index=True, ForeignKey("city.id"))
+    id = Column(String, ForeignKey("citys.id"), primary_key=True, index=True)
     update_time = Column(Integer)
     wea = Column(String)
     tem = Column(Float)
