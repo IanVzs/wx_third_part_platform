@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS `city`;
+DROP TABLE IF EXISTS `citys`;
 
-CREATE TABLE city(
+CREATE TABLE citys(
 	id CHAR(32) PRIMARY KEY NOT NULL,
 	cityEn CHAR(32) NOT NULL,
 	cityZh CHAR(32) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE city(
 	lon CHAR(32) NOT NULL
 );
 
-INSERT INTO `city` (`id`, `cityEn`, `cityZh`, `provinceEn`, `provinceZh`, `countryEn`, `countryZh`, `leaderEn`, `leaderZh`, `lat`, `lon`)
+INSERT INTO `citys` (`id`, `cityEn`, `cityZh`, `provinceEn`, `provinceZh`, `countryEn`, `countryZh`, `leaderEn`, `leaderZh`, `lat`, `lon`)
 VALUES
 	('101010100','beijing','北京','beijing','北京','China','中国','beijing','北京','39.904989','116.405285'),
 	('101010200','haidian','海淀','beijing','北京','China','中国','beijing','北京','39.956074','116.310316'),
@@ -3197,3 +3197,4 @@ VALUES
 	('101340404','nantou','南投','taiwan','台湾','China','中国','taizhong','台中','23.916','120.685'),
 	('101340405','hualian','花莲','taiwan','台湾','China','中国','taizhong','台中','23.983','121.603'),
 	('101340406','yunlin','云林','taiwan','台湾','China','中国','taizhong','台中','23.718','120.538');
+
