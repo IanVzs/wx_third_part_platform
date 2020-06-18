@@ -1,0 +1,15 @@
+echo '输入 1 到 4 之间的数字:1 Debug,  2 公网运行, 3 80端口 需要root, 4 不运行'
+echo '你输入的数字为:'
+read aNum
+case $aNum in
+    1)  echo '你选择了 Debug模式运行' && ~/env/fastapi/bin/uvicorn main:app --reload --host 0.0.0.0 --port 8000
+    ;;
+    2)  echo '你选择了 公网运行' && ~/env/fastapi/bin/uvicorn main:app --host 0.0.0.0 --port 8000
+    ;;
+    3)  echo '你选择了 80端口运行!!!' && /home/ubuntu/env/fastapi/bin/uvicorn main:app --host 0.0.0.0 --port 80
+    ;;
+    4)  echo '你选择了 不运行'
+    ;;
+    *)  echo '你没有输入 1 到 4 之间的数字'
+    ;;
+esac
