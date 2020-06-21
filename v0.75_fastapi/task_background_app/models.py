@@ -26,12 +26,21 @@ class Weather(Base):
     __tablename__ = "weathers"
 
     id = Column(Integer, ForeignKey("citys.id"), primary_key=True, index=True)
-    utime = Column(Integer)
-    wea = Column(String(12))
-    tem = Column(Float(4))
-    win = Column(String(16))
-    win_speed = Column(Integer)
-    win_meter = Column(String(12))
-    air = Column(Integer)
+    utime = Column(Integer) # 更新时间
+    wea = Column(String(12)) # 天气描述
+    nwea = Column(String(12)) # 天气描述
+    tem_max = Column(Float(4))
+    tem_min = Column(Float(4))
+    tem = Column(Float(4)) # 温度
+    win = Column(String(12)) # 风向
+    win_speed = Column(Integer) # 公里/小时
+    win_angle = Column(Integer) # 角度
+    hum = Column(Integer) # 湿度
+    cloud = Column(Integer) # 云量
+    vis = Column(Integer) # 可见度  公里
+    water = Column(Integer) # 降水量
+    pwater = Column(Integer) # 降水概率
+    uv_index = Column(Integer) # 紫外线指数
+    
 
     owner = relationship("City", back_populates="weathers")

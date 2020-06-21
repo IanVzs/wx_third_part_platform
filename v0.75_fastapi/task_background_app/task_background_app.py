@@ -37,7 +37,7 @@ def read_citys(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 
 
 @router.get("/task/weather/")
-async def creat_task(task_id: str = '', db: Session = Depends(get_db), background_tasks: BackgroundTasks = None):
+async def creat_task(task_id: str = 'wearth_forecast', db: Session = Depends(get_db), background_tasks: BackgroundTasks = None):
     task_status = {"status": 1}
     if task_worker.in_todo_list(task_id):
         citys = crud.get_citys(db, skip=0, limit=4000)

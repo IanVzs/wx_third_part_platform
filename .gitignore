@@ -1,16 +1,13 @@
 *.pyc
 __pycache__
 nohup.out
-log
 config.py
 output
 build
 *.c
 *.o
-log.ini
-api.log
+*.ini
 *.log
-api.ini
 release
 *.vscode
 *.db
