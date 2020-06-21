@@ -26,11 +26,9 @@ class Weather(Base):
     __tablename__ = "weathers"
 
     id = Column(Integer, ForeignKey("citys.id"), primary_key=True, index=True)
-    update_time = Column(Integer)
+    utime = Column(Integer)
     wea = Column(String(12))
     tem = Column(Float(4))
-    tem_day = Column(Float(4))
-    tem_night = Column(Float(4))
     win = Column(String(16))
     win_speed = Column(Integer)
     win_meter = Column(String(12))

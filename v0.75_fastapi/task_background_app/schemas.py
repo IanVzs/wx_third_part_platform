@@ -5,11 +5,9 @@ from pydantic import BaseModel
 
 class WeatherBase(BaseModel):
     id: int
-    update_time: int
+    utime: int
     wea: str 
     tem: float
-    tem_day: float
-    tem_night: float
     win: str
     win_speed: int
     win_meter: str
