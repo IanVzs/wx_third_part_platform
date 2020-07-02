@@ -3,7 +3,7 @@ import json
 import copy
 import asyncio
 
-from loggers import record_weather_msg
+from loggers import record_weather_msg, record_weather_warning
 from helpers import api
 
 global TASK_DATA
@@ -14,16 +14,20 @@ def get_task_json():
 
 get_task_json()
 
+def get_params(task_config, infos):
+    data = copy.copy(task_config["params"])
+    for k, v in data.items():
+        data[k] = v.format(**infos)
+    return data
+
 def get_city_weather(task_config: dict, citys: iter):
     """实况天气"""
     datas = []
     for c in citys:
         if not c.leaderZh in task_config["aim"]:
             continue
-        data = copy.copy(task_config["params"])
         infos = {"city_id": f"CN{c.id}"}
-        for k, v in data.items():
-            data[k] = v.format(**infos)
+        data = get_params(task_config, infos)
         datas.append(data)
     results = {}
     if "paths" not in task_config:
@@ -40,6 +44,20 @@ def get_city_weather(task_config: dict, citys: iter):
                 results[key] = {}
             results[key].update(weather_data)
     record_weather_msg(results)
+    return True
+
+def get_weather_warning(task_config: dict, *args, **kwargs):
+    """天气预警"""
+    url_host = task_config["host"]
+    url = url_host
+    if task_config.get("paths") or task_config.get("path"):
+        pass
+    else:
+        pass
+    data = get_params(task_config, infos={})
+    resp = api.get_all_weather_warning(url, data)
+    results = eval(task_config["resp"]["data"])
+    record_weather_warning(results)
     return True
 
 def in_todo_list(task_id):

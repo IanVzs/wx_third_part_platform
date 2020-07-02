@@ -12,3 +12,8 @@ def record_weather_msg(data) -> bool:
     sign = False
     weatherLog.info(f"{data}")
     return sign
+
+def record_weather_warning(data) -> bool:
+    sign = False
+    weatherLog.info(f"{data}")
+    return sign

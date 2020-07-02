@@ -10,6 +10,8 @@ def get_city(db: Session, city_id: int):
 def get_city_by_id(db: Session, _id: str):
     return db.query(models.City).filter(models.City.id == _id).first()
 
+def get_city_by_id(db: Session, _id: str):
+    return db.query(models.City).filter(models.City.id == _id).first()
 
 def get_citys(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.City).offset(skip).limit(limit).all()
