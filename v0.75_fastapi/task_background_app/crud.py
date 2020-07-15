@@ -37,3 +37,14 @@ def create_city_weather(db: Session, weather: schemas.WeatherCreate, city_id: in
     db.commit()
     db.refresh(db_weather)
     return db_weather
+
+
+def create_weawarning(db: Session, warning: schemas.WeatherWarningCreate):
+    db_warning = models.WeatherWarning(**warning.dict())
+    db.add(db_warning)
+    db.commit()
+    db.refresh(db_warning)
+    return db_warning
+
+def get_weawarning(db: Session, city_id: int):
+    return db.query(models.City).filter(models.City.id == city_id).first()
