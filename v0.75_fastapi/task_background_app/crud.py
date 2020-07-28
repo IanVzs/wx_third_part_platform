@@ -46,5 +46,9 @@ def create_weawarning(db: Session, warning: schemas.WeatherWarningCreate):
     db.refresh(db_warning)
     return db_warning
 
+def get_weawarning_by_id(db: Session, _id: str):
+    return db.query(models.City).filter(models.WeatherWarning.id == _id).first()
+
+
 def get_weawarning(db: Session, city_id: int):
     return db.query(models.City).filter(models.City.id == city_id).first()
