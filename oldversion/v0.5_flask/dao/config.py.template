@@ -1,0 +1,14 @@
+# -*-coding: utf-8-*-
+
+HOST_REDIS = "0.0.0.0"
+POER_REDIS = 6379
+
+
+MYSQL = {
+    'host': '127.0.0.1',
+    'port': 6033,
+    'user': 'user',
+    'passwd': 'passwd',
+    'db': 'wx_third_part_platform',
+    'charset': 'utf8mb4',
+}
