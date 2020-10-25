@@ -19,6 +19,7 @@ class City(Base):
     lat = Column(String(32))
     lon = Column(String(32))
     
+    weawarnings = relationship("WeatherWarning", back_populates="city_info")
     weathers = relationship("Weather", back_populates="owner")
 
 
@@ -44,3 +45,23 @@ class Weather(Base):
     
 
     owner = relationship("City", back_populates="weathers")
+
+
+class WeatherWarning(Base):
+    __tablename__ = "weatherWarnings"
+
+    id = Column(Integer, primary_key=True, index=True)
+    dt = Column(String(19))
+    hourType = Column(Integer)
+    stationId = Column(Integer)
+    areaId = Column(String, ForeignKey("citys.id"))
+    stationName = Column(String(36))
+    lon = Column(Float(4))
+    lat = Column(Float(4))
+    signalType = Column(String(24))
+    signalLevel = Column(String(6))
+    issueTime = Column(String(19))
+    relieveTime = Column(String(19))
+    issueContent = Column(String(512))
+
+    city_info = relationship("City", back_populates="weawarnings")

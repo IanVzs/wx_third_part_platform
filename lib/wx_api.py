@@ -50,7 +50,8 @@ def deal_wx_api(data, signature, timestamp, nonce):
             # rsp = wx_workers.wx_event(appid, data_dict)
         elif msg_type == "text":
             msg_content = data_dict.get("Content")
-            return send_text_cont(user_openid, source_appid, msg_content, nonce)
+            return send_bank_response(nonce)
+            # return send_text_cont(user_openid, source_appid, msg_content, nonce)
     return send_bank_response(nonce)
 
 if "__main__" == __name__:
