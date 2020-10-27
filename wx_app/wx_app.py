@@ -5,13 +5,17 @@ from fastapi import Depends, FastAPI, HTTPException, BackgroundTasks
 
 from route_class import TimedRoute, APIRouter
 from . import schemas
+from lib.wx_service import wechat_oap
 
 router = APIRouter(route_class=TimedRoute)
 
 @router.post("/send_msg/", response_model=schemas.MsgRep)
 def create_city(type: str, data: schemas.MsgBody):
-    if type:
-        raise HTTPException(status_code=400, detail="Email already registered")
+    if data.touser and data.msgtype:
+        return {"msg": "success"}
+    else:
+        raise HTTPException(status_code=400, detail="params err")
+
     rlt = schemas.MsgRep(sign=1, msg='')
     return rlt
 

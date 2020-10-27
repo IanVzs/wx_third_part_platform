@@ -381,6 +381,7 @@ class WeChat_OAP():
         log_info("Get_Jsapi_Ticket", rsp_data)
         return jsapi_ticket
 
+wechat_oap = class WeChat_OAP("self_service")
 
 if __name__ == '__main__':
     app_id = "testhospital"
