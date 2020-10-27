@@ -1,4 +1,24 @@
+# -*- coding: utf-8 -*-
+
 TOKEN = ""
 ENCODINGAESKEY = ""
 WXAPPID = ""
 AppSecret = ""
+
+# 使用刷新令进行刷新微信令牌的URL
+URL_REFRESHTOKEN = ""
+
+MINI_APP_ID = ""
+URL_GET_ACCESS_TOKEN = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={}&secret={}"
+URL_POST_SEND_TEMPLATE_MSG = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}"
+URL_GET_TEMPLATE_LIST = "https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token={}"
+URL_GET_OPENID_LIST = "https://api.weixin.qq.com/cgi-bin/user/get?access_token={}&next_openid={}"
+URL_GET_USER_S_INFO = "https://api.weixin.qq.com/cgi-bin/user/info?access_token={}&openid={}&lang=zh_CN"
+URL_POST_BIND = "https://api.weixin.qq.com/cgi-bin/open/bind?access_token={}"
+URL_POST_CREATE_MENU = " https://api.weixin.qq.com/cgi-bin/menu/create?access_token={}"
+URL_GET_MENU = "https://api.weixin.qq.com/cgi-bin/menu/get?access_token={}"
+URL_GET_CUR_SELF_MENU = "https://api.weixin.qq.com/cgi-bin/get_current_selfmenu_info?access_token={}"
+URL_SEND_CUSTOM = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token={}"
+URL_GET_QRCODE_TICKET = "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token={}"
+URL_GET_JSAPI_TICKET = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token={}&type=jsapi"
+URL_TRACK = "https://zsys.zuoshouyisheng.com/track"
