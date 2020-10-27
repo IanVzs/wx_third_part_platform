@@ -1,14 +1,14 @@
 from fastapi import FastAPI
 
 from routers import wx_api
-from user_app import user_app
+# from user_app import user_app
 from task_background_app import task_background_app
 
 def creat_app():
     app = FastAPI()
     app.include_router(wx_api.router)
     
-    app.include_router(user_app.router)
+    # app.include_router(user_app.router)
     app.include_router(task_background_app.router)
     return app
 
