@@ -12,8 +12,10 @@ import string
 import hashlib
 import requests
 import datetime
-from lib import config as lib_config
 import urllib.parse
+
+from loggers import debugLog
+from lib import config as lib_config
 
 
 def check_access_token(func):
@@ -41,7 +43,6 @@ class WeChat_OAP():
             log_error("WeChat_OAP init error. mode is {}, appid is {}".format(self.mode, str(appid)))
         self.ret = {'nonceStr': '', 'jsapi_ticket': '', 'timestamp': 0, 'url': ''}
 
-        self.mini_app_ID = lib_config.MINI_APP_ID
         self.url_unde_get_access_token = lib_config.URL_GET_ACCESS_TOKEN
         self.url_unde_post_send_template_msg = lib_config.URL_POST_SEND_TEMPLATE_MSG
         self.url_unde_get_template_list = lib_config.URL_GET_TEMPLATE_LIST
@@ -77,7 +78,7 @@ class WeChat_OAP():
             expires_in = rsp.json().get('expires_in')  # 凭证有效时长
             self.access_token = rsp.json().get('access_token')  # 接口调用凭证
             if self.access_token:
-                log_info("updated access_token for wechat_oap")
+                debugLog.info("updated access_token for wechat_oap")
             else:
                 log_error("updated access_token failed, the appid is {}, appsecret is {}".format(appid, appsecret))
         elif self.mode == "third_part_platform":
@@ -160,7 +161,7 @@ class WeChat_OAP():
     @check_access_token
     def send_custom_msg(self, data):
         rsp_data = requests.post(url=self.url_post_send_custom_msg, data=json.dumps(data, ensure_ascii=False).encode())
-        log_info("send_custom_msg: inputs: [POST, url: {}, json: {}], outputs: [rsp_json: {}],".format(
+        debugLog.info("send_custom_msg: inputs: [POST, url: {}, json: {}], outputs: [rsp_json: {}],".format(
             self.url_post_send_custom_msg, str(data), str(rsp_data.json())))
         return rsp_data
 
@@ -168,7 +169,7 @@ class WeChat_OAP():
     def send_template_msg(self, data):
         rsp_data = {}
         rsp_send_template_msg = requests.request("POST", self.url_post_send_template_msg, json=data)
-        log_info("send_template_msg: inputs: [POST, url: {}, json: {}], outputs: [rsp_json: {}],".format(
+        debugLog.info("send_template_msg: inputs: [POST, url: {}, json: {}], outputs: [rsp_json: {}],".format(
             self.url_post_send_template_msg, data, rsp_send_template_msg.json()))
         msgid = rsp_send_template_msg.json().get("msgid")
         if not msgid:
@@ -249,7 +250,7 @@ class WeChat_OAP():
                 self.url_post_create_menu = url
                 rsp_create_menu_msg = requests.post(
                     self.url_post_create_menu, data=json.dumps(new_menu.get("menu"), ensure_ascii=False).encode())
-                log_info("create_menu: inputs: [POST, url: {}, json: {}], outputs: [rsp_json: {}],".format(
+                debugLog.info("create_menu: inputs: [POST, url: {}, json: {}], outputs: [rsp_json: {}],".format(
                     self.url_post_create_menu, new_menu, rsp_create_menu_msg.json()))
                 errcode = rsp_create_menu_msg.json().get("errcode")
                 if errcode:
@@ -279,7 +280,7 @@ class WeChat_OAP():
         rsp_data = {}
         self.url_get_menu = url
         rsp_get_menu_msg = requests.request("GET", self.url_get_menu)
-        log_info("get_menu: inputs: url:{}, outputs: rsp_get_menu_msg: {}".format(self.url_get_menu,
+        debugLog.info("get_menu: inputs: url:{}, outputs: rsp_get_menu_msg: {}".format(self.url_get_menu,
                                                                                   rsp_get_menu_msg.json()))
         errcode = rsp_get_menu_msg.json().get("errcode")
         if errcode:
@@ -306,7 +307,7 @@ class WeChat_OAP():
         self.url_get_cur_self_menu = url
         rsp_get_menu_msg = requests.request("GET", self.url_get_cur_self_menu)
         rsp_get_menu_msg = rsp_get_menu_msg.json()
-        log_info("get_cur_self_menu: inputs: url:{}, outputs: rsp_get_menu_msg: {}".format(
+        debugLog.info("get_cur_self_menu: inputs: url:{}, outputs: rsp_get_menu_msg: {}".format(
             self.url_get_menu, rsp_get_menu_msg))
         errcode = rsp_get_menu_msg.get("errcode")
         if errcode:
@@ -366,7 +367,7 @@ class WeChat_OAP():
     def get_signature(self, jsapi_ticket, url):
         self.ret["jsapi_ticket"] = jsapi_ticket
         decoded_url = urllib.parse.unquote(url)
-        log_info("get_signature: %s %s" % (url, decoded_url))
+        debugLog.info("get_signature: %s %s" % (url, decoded_url))
         self.ret["url"] = decoded_url
         self.ret["timestamp"] = self.__create_timestamp()
         self.ret["nonceStr"] = self.__create_nonce_str()
@@ -378,10 +379,10 @@ class WeChat_OAP():
     def get_jsapi_ticket(self):
         rsp_data = requests.get(self.url_get_jsapi_ticket).json()
         jsapi_ticket = rsp_data.get("ticket") or ""
-        log_info("Get_Jsapi_Ticket", rsp_data)
+        debugLog.info("Get_Jsapi_Ticket", rsp_data)
         return jsapi_ticket
 
-wechat_oap = class WeChat_OAP("self_service")
+wechat_oap = WeChat_OAP("self_service")
 
 if __name__ == '__main__':
     app_id = "testhospital"

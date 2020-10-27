@@ -1,15 +1,16 @@
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel
 
 
-class Text:
+class Text(BaseModel):
     content: str
 
 class MsgBody(BaseModel):
     touser: str
     msgtype: str
-    text: Text = {}
+    text: Optional[Text] = None
+    tax: Optional[float] = None
 
 class MsgRep(BaseModel):
     msg: str
